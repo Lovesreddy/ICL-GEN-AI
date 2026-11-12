@@ -1,0 +1,37 @@
+Title: Soil testing and organic nutrient planning
+Category: soil
+Source: Organic Farming Guide educational knowledge base
+
+A soil test is a starting point for nutrient decisions, not a complete diagnosis of crop health. Samples must represent the field, and results should be interpreted with the crop, yield goal, irrigation water, and organic-standard requirements in mind. Compost and rotations build soil condition over time, while a test helps identify constraints that may need specific attention.
+
+Benefits:
+- Fewer unnecessary amendments and lower input costs.
+- Earlier detection of pH, salinity, or nutrient constraints.
+- A repeatable record for comparing fields and seasons.
+
+Step-by-step instructions:
+1. Divide land into sampling areas with similar soil, slope, crop history, and management.
+2. Collect a representative sample from each area using the laboratory's clean tools, depth, and sampling instructions.
+3. Label samples clearly and tell the laboratory which crop is planned and whether the field is irrigated.
+4. Review the report with a qualified local adviser; do not treat a single result as a diagnosis of a leaf symptom.
+5. Prioritize mature compost, cover crops, and rotation, then add only amendments that are permitted and supported by the report.
+6. Keep the test, input receipts, application dates, and crop response together; retest at an interval advised by the laboratory.
+
+Required materials:
+- Clean sampling tool
+- Field map or notes
+- Laboratory sample bags
+- Recent crop and amendment history
+
+Practical examples:
+- Separate a low-lying field from a well-drained field rather than mixing both into one sample.
+- Compare soil-test trends over multiple seasons before changing a long-term nutrient plan.
+
+Related crops: Rice, Wheat, Tomato, Groundnut, Cotton
+
+Precautions:
+- Do not sample immediately after applying an amendment unless the laboratory specifically advises it.
+- Do not apply lime, gypsum, or micronutrients based only on a photograph or a generic online schedule.
+- Check that every input is allowed by the farm's certification standard before application.
+
+This is educational guidance drawn from widely described organic farming practice. Rates, varieties, and legal rules vary by soil, season, and country. Confirm important decisions with a local agriculture extension officer or your organic certifier.

@@ -1,0 +1,32 @@
+Title: Major soil groups in India
+Category: soil
+Source: Organic Farming Guide educational knowledge base
+
+The types of soils in India are commonly described using eight broad groups. Alluvial soils occur across the northern plains and river deltas; their texture and fertility vary, and rice, wheat, sugarcane, or jute may suit different locations. Black (regur) soils are clay-rich, hold water, and swell when wet and crack as they dry; cotton, sorghum, soybean, and pulses are grown in suitable areas. Red and yellow soils occur widely across the eastern and southern plateau; many are relatively low in organic matter, so millets, pulses, or groundnut depend on rainfall and soil management. Laterite soils form in strongly leached, high-rainfall regions; tea, coffee, and cashew are grown in some areas with suitable management. Arid soils are common in dry western regions and are often sandy with low organic matter; millets and pulses depend on local rainfall and available water. Forest and mountain soils vary with slope and elevation; horticulture and tea are grown in suitable locations, while steep or shallow soils need erosion protection. Saline and alkaline soils contain excess soluble salts or sodium that can restrict crops; testing and drainage assessment are needed before choosing reclamation steps. Peaty and marshy soils have high organic matter and often remain wet; rice and other wetland crops are grown where local water conditions allow. These are broad regional groups, not a diagnosis of an individual field.
+
+Benefits:
+- Broad soil groups help compare landscapes and plan what to test.
+- Understanding texture, drainage, and salinity helps avoid crop choices that do not fit field conditions.
+
+Step-by-step instructions:
+1. Use the broad group as a starting clue, not as a substitute for observing the field.
+2. Check texture, drainage, pH, salinity, and organic matter through an appropriate soil test.
+3. Choose crops using the field result together with rainfall, irrigation water, season, and local extension advice.
+
+Required materials:
+- Field history and location notes
+- Representative soil sample
+- Soil laboratory report when available
+
+Practical examples:
+- A black clay soil may hold water well but require careful drainage and timing of field operations.
+- A sandy arid soil may need water-conserving management, but irrigation water quality should also be checked.
+
+Related crops: Rice, Wheat, Cotton, Groundnut, Tea
+
+Precautions:
+- Do not identify a field solely by soil color or a regional map.
+- Do not apply gypsum, lime, or other amendments for salinity or sodicity without a soil test and local advice.
+- Crop suitability varies within each group; check field conditions and local recommendations.
+
+This is educational guidance drawn from widely described organic farming practice. Rates, varieties, and legal rules vary by soil, season, and country. Confirm important decisions with a local agriculture extension officer or your organic certifier.

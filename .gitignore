@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+backend/.venv/
+
+# Secrets and local data
+.env
+backend/.env
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+
+# Generated uploads and vector indexes
+backend/knowledge_base/uploads/
+*.faiss
+
+# Frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

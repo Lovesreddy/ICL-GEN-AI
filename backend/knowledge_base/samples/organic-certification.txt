@@ -1,0 +1,39 @@
+Title: Organic certification
+Category: certification
+Source: Organic Farming Guide educational knowledge base
+
+Organic certification is a third-party check against a written standard. In India the National Programme for Organic Production is the main framework for exported organic products, and other countries use their own rules, such as the USDA National Organic Program. The details differ. What is common is a transition period, a ban on synthetic fertilizers and synthetic pesticides, allowed-input lists, separation from conventional neighbours, and records. Selling a product as organic without the approval required in your market can be unlawful. This guide cannot certify a farm.
+
+Benefits:
+- Access to markets that pay for a verified organic claim.
+- A written production standard instead of an informal definition.
+- Regular inspection that catches drift, commingling, and incomplete records.
+- A traceable lot from field to sale.
+
+Step-by-step instructions:
+1. Choose the standard required by the buyer: domestic group certification, NPOP, or another national standard.
+2. Contact an accredited certification body or a local organic farmer group and ask for the current fee and the input list.
+3. Map fields, storage, and any conventional plots. Create buffer zones where spray drift is possible.
+4. Start records immediately: seed source, inputs, dates, harvest weights, and sales. Keep bills.
+5. Complete the transition period required by that standard. Crops grown during transition are usually not sold as organic.
+6. Host the inspection, close any non-compliances, and renew the certificate before it expires.
+
+Required materials:
+- Field map
+- Input purchase bills
+- Seed labels
+- Harvest and sales register
+- The standard's allowed-input list
+
+Practical examples:
+- A farm that uses one permitted biofertilizer and one unlisted fungicide can lose certification for that crop even if every other practice was organic.
+- A grower group keeps one internal control file per member so the certifier can sample records instead of inventing them on inspection day.
+
+Related crops: Rice, Cotton, Turmeric, Mango
+
+Precautions:
+- Do not print an organic logo until the certifier authorises it.
+- Borrowed spray equipment can contaminate an organic field.
+- Standards change. Check the current list rather than a photocopy from several years ago.
+
+This is educational guidance drawn from widely described organic farming practice. Rates, varieties, and legal rules vary by soil, season, and country. Confirm important decisions with a local agriculture extension officer or your organic certifier.
