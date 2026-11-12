@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import importlib.util
 import shutil
 from pathlib import Path
 
@@ -35,6 +36,10 @@ def validate_upload(filename: str, size: int, category: str) -> str:
     suffix = Path(filename).suffix.lower()
     if suffix not in ALLOWED_EXTENSIONS:
         raise ExtractionError("Upload a PDF, DOCX, or TXT file.")
+    if suffix == ".pdf" and importlib.util.find_spec("fitz") is None:
+        raise ExtractionError("PDF uploads are unavailable on this deployment.")
+    if suffix == ".docx" and importlib.util.find_spec("docx") is None:
+        raise ExtractionError("DOCX uploads are unavailable on this deployment.")
     if size > settings.max_upload_mb * 1024 * 1024:
         raise ExtractionError(f"Files must be {settings.max_upload_mb} MB or smaller.")
     if size <= 0:

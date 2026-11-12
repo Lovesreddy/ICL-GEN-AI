@@ -1,9 +1,4 @@
-"""Embedding generation.
-
-Production uses sentence-transformers/all-MiniLM-L6-v2.
-The deterministic backend exists only for automated tests and is never a
-silent fallback when the real model fails.
-"""
+"""Embedding generation with a low-memory default and optional semantic model."""
 
 from __future__ import annotations
 

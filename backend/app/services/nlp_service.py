@@ -7,13 +7,10 @@ keeps words such as "not", "without", and crop names so the meaning stays intact
 from __future__ import annotations
 
 import re
-import threading
 
 from app.services.embeddings import get_embedding_service
 
-_lock = threading.Lock()
 _ready = False
-_lemmatizer = None
 _stopwords: set[str] = set()
 _lemmatizer_name = "identity"
 
@@ -80,30 +77,10 @@ INJECTION_PATTERN = re.compile(
 )
 
 
-def ensure_nltk() -> None:
-    global _ready, _lemmatizer, _stopwords, _lemmatizer_name
-    if _ready:
-        return
-    with _lock:
-        if _ready:
-            return
-        try:
-            import nltk
-            from nltk.corpus import stopwords
-            from nltk.stem import WordNetLemmatizer
-
-            for package in ("punkt", "punkt_tab", "stopwords", "wordnet", "omw-1.4"):
-                try:
-                    nltk.download(package, quiet=True)
-                except Exception:
-                    pass
-            _stopwords = set(stopwords.words("english"))
-            _lemmatizer = WordNetLemmatizer()
-            _lemmatizer_name = "wordnet"
-        except Exception:
-            _stopwords = set(FALLBACK_STOPWORDS)
-            _lemmatizer = None
-            _lemmatizer_name = "identity"
+def ensure_nlp_ready() -> None:
+    global _ready, _stopwords
+    if not _ready:
+        _stopwords = set(FALLBACK_STOPWORDS)
         _ready = True
 
 
@@ -141,26 +118,14 @@ def neutralize_instructions(text: str) -> str:
 
 
 def tokenize(text: str) -> list[str]:
-    ensure_nltk()
-    try:
-        from nltk.tokenize import word_tokenize
-
-        tokens = word_tokenize(text)
-    except Exception:
-        tokens = re.findall(r"[A-Za-z][A-Za-z'-]*|\d+", text)
+    ensure_nlp_ready()
+    tokens = re.findall(r"[A-Za-z][A-Za-z'-]*|\d+", text)
     return [token for token in tokens if re.search(r"[A-Za-z0-9]", token)]
 
 
 def lemmatize(tokens: list[str]) -> list[str]:
-    ensure_nltk()
-    lemmas = []
-    for token in tokens:
-        lower = token.lower()
-        if _lemmatizer is None:
-            lemmas.append(lower)
-        else:
-            lemmas.append(_lemmatizer.lemmatize(lower))
-    return lemmas
+    ensure_nlp_ready()
+    return [token.lower() for token in tokens]
 
 
 def keywords_from(lemmas: list[str], limit: int = 8) -> list[str]:
@@ -211,7 +176,7 @@ def semantic_similarity(left: str, right: str) -> float | None:
 
 
 def analyze(text: str, compare_to: str | None = None) -> dict:
-    ensure_nltk()
+    ensure_nlp_ready()
     cleaned = clean_text(text)
     tokens = tokenize(cleaned)
     lemmas = lemmatize(tokens)

@@ -11,6 +11,7 @@ def build_client(tmp_path, monkeypatch):
     monkeypatch.setenv("VECTOR_DIR", str(tmp_path / "vector_store"))
     monkeypatch.setenv("KNOWLEDGE_DIR", str(tmp_path / "knowledge_base"))
     monkeypatch.setenv("AUTO_INDEX", "false")
+    monkeypatch.setenv("EMBEDDING_BACKEND", "deterministic")
     monkeypatch.setenv("LLM_PROVIDER", "groq")
     monkeypatch.setenv("GROQ_API_KEY", "")
     monkeypatch.setenv("JWT_SECRET", "test-secret-key-that-is-long-enough-123")
@@ -45,12 +46,31 @@ def test_health_and_crops(tmp_path, monkeypatch):
     health = client.get("/api/health")
     assert health.status_code == 200
     assert health.json()["database"] in {"ok", "degraded"}
+    assert health.json()["nlp"]["lemmatizer"] == "identity"
 
     crops = client.get("/api/crops")
     assert crops.status_code == 200
     payload = crops.json()
     assert payload and any(item["crop_name"] for item in payload)
     assert len(payload) >= 18
+
+
+def test_nlp_fallback_preserves_negation_without_external_corpora():
+    from app.services.nlp_service import analyze
+
+    result = analyze("Tomatoes should not be watered with contaminated water.")
+
+    assert result["lemmatizer"] == "identity"
+    assert "not" in result["tokens_without_stopwords"]
+
+
+def test_pdf_upload_requires_optional_document_dependencies(tmp_path, monkeypatch):
+    build_client(tmp_path, monkeypatch)
+    from app.services import ingestion
+
+    monkeypatch.setattr(ingestion.importlib.util, "find_spec", lambda _name: None)
+    with pytest.raises(ingestion.ExtractionError, match="PDF uploads are unavailable"):
+        ingestion.validate_upload("guide.pdf", 16, "general")
 
 
 def test_vite_fallback_port_is_allowed_by_cors(tmp_path, monkeypatch):

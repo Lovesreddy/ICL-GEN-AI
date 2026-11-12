@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     )
     xai_model: str = Field(default="grok-4.7", validation_alias=AliasChoices("xai_model", "grok_model"))
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
-    embedding_backend: str = "sentence-transformers"
+    embedding_backend: str = "deterministic"
     vector_dir: str = "./data/vector_store"
     knowledge_dir: str = "./knowledge_base"
     auto_index: bool = True

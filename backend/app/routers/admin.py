@@ -14,7 +14,7 @@ from app.services.embeddings import get_embedding_service
 from app.services.extraction import ExtractionError
 from app.services.ingestion import delete_document, ingest_file, reindex_document, save_upload, validate_upload
 from app.services.llm import llm_status
-from app.services.nlp_service import _lemmatizer_name, ensure_nltk
+from app.services.nlp_service import _lemmatizer_name, ensure_nlp_ready
 from app.services.vector_store import get_vector_store
 
 router = APIRouter(prefix="/api", tags=["admin"])
@@ -27,7 +27,7 @@ def build_health(db: Session) -> dict:
     except Exception as exc:
         database = f"error: {exc}"
     embedder = get_embedding_service()
-    ensure_nltk()
+    ensure_nlp_ready()
     return {
         "status": "ok" if database == "ok" else "degraded",
         "database": database,

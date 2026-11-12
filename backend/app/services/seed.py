@@ -3,8 +3,6 @@
 import json
 from pathlib import Path
 
-import fitz
-from docx import Document as DocxDocument
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -90,32 +88,6 @@ def write_sample_files() -> list[tuple[Path, str, str]]:
         if not path.exists():
             path.write_text(render_crop(crop), encoding="utf-8")
         written.append((path, f"{crop['crop_name']} cultivation", "crop"))
-    pdf_path = root / "organic-certification-note.pdf"
-    if not pdf_path.exists():
-        document = fitz.open()
-        page = document.new_page()
-        page.insert_text(
-            (72, 72),
-            "Organic certification note\n\n"
-            "Certification checks records, allowed inputs, and separation from conventional land.\n"
-            "A transition period usually applies before produce may be sold as organic.\n"
-            "Confirm the current standard with an accredited certification body.",
-            fontsize=12,
-        )
-        document.save(pdf_path)
-        document.close()
-    written.append((pdf_path, "Organic certification note", "certification"))
-    docx_path = root / "water-conservation-note.docx"
-    if not docx_path.exists():
-        document = DocxDocument()
-        document.add_heading("Water conservation note", level=1)
-        document.add_paragraph(
-            "Mulch, compost, and timely irrigation conserve water. "
-            "Rice may use alternate wetting and drying after establishment when weeds are controlled. "
-            "Vegetables should be watered at the root zone rather than over the leaves."
-        )
-        document.save(docx_path)
-    written.append((docx_path, "Water conservation note", "water"))
     return written
 
 
